@@ -43,7 +43,7 @@ app.use(hpp({
 const limiter = rateLimit({
   max: 100,
   windowsMs: 60 * 60 * 1000,
-  message: "Too many requests from this IP, please try again later";
+  message: "Too many requests from this IP, please try again later"
 
 })
 
@@ -62,7 +62,7 @@ app.use(express.json())
 app.use("/api/v1/data", dataRouter)
 app.use("/api/v1/users", userRouter)
 
-/// HEADERS SETTING
+/// HEADERS SETTING - allowing cross origin for frontend/backend communication 
 
 app.use(function (req, res, next) {	
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');    
