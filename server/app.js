@@ -60,7 +60,7 @@ app.use(express.json())
 
 
 app.use("/api/v1/data", dataRouter)
-app.use("/api/v1/users", userRouter)
+// app.use("/api/v1/users", userRouter)
 
 /// HEADERS SETTING - allowing cross origin for frontend/backend communication 
 
