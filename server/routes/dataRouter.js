@@ -13,8 +13,9 @@ router
     .post(dataController.createSingleData)
 
 
-
-
+router
+    .route("/:id")
+    .get(dataController.getSingleData)
 
 
 

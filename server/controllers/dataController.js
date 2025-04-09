@@ -20,12 +20,21 @@ exports.getAllData = async (req, res) => {
 
 }
 
-exportsgetSingleData = async (req, res) => {
+exports.getSingleData = async (req, res) => {
 
 try {
-    
+    const id = req.params.id
+    const singleData = await Data.findById(id)
+    res.status(200).json({
+        status: "Success",
+        data: singleData
+        
+    })
 } catch (error) {
-    
+    res.status(400).json({
+        status: "Fail",
+        message: error
+    })
 }
     
 
