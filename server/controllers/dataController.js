@@ -63,8 +63,17 @@ exports.createSingleData = async (req, res) => {
 
 exports.deleteSingleData = async (req, res) => {
     try {
-        
+        const id = req.params.id
+        await Data.findByIdAndDelete(id)
+        res.status(200).json({
+            status: "Success", 
+            message: "Data deleted successfully!"
+        })
     } catch (error) {
+        res.status(404).json({
+            status: "Fail",
+            message: err
+        })
         
     }
 }
