@@ -2,7 +2,6 @@ const express = require("express")
 const cors = require("cors")
 const helmet = require('helmet')
 const mongoSanitize = require("express-mongo-sanitize")
-const dataRouter = require("./routes/dataRouter")
 const userRouter = require("./routes/userRouter")
 const rateLimit = require("express-rate-limit")
 const xss = require("xss-clean")
@@ -59,7 +58,6 @@ app.use(express.json())
 // API ROUTES SETTING
 
 
-app.use("/api/v1/data", dataRouter)
 // app.use("/api/v1/users", userRouter)
 
 /// HEADERS SETTING - allowing cross origin for frontend/backend communication 
